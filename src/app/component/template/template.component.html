@@ -1,0 +1,172 @@
+<section class="policy-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad-0">
+        <div class="privacy-policy-contaner">
+          <div class="privacy-para">
+            <div class="policy-tab-active">
+              <div class="policy-tab">{{name}}</div>
+              <div class="policy-area">{{area}}, {{city}}</div>
+            </div>
+            <div class="topimg">
+              <img src="{{coverImage}}" onError="this.src='assets/img/onError.png'" image-lazy-background-image="true"
+                image-lazy-loader="lines">
+            </div>
+
+            <div class="about">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 pad-0 cafePara">
+                  <div class="policy-cat">
+                    <div class="part1" *ngFor="let cate of category">
+                      <div class="div"></div>
+                      <span>{{cate.catName}}</span>
+                    </div>
+                  </div>
+                  <p>Cafe GoodLuck is a popular Irani cafe-restaurant on the Fergusson College Road, in the Deccan
+                    Gymkhana
+                    area of Pune, India.Established in 1935 by Hussain Ali Yakshi, it is one of the oldest Irani places
+                    in
+                    Pune.Cafe GoodLuck is most famous for it bun maska/bun omelette and Iranian tea among the other
+                    dishes.The place is always crowded and especially popular among the youngsters.Cafe GoodLuck has no
+                    other branch.</p>
+                  <p>Cafe GoodLuck is a popular Irani cafe-restaurant on the Fergusson College Road, in the Deccan
+                    Gymkhana
+                    area of Pune, India.Established in 1935 by Hussain Ali Yakshi, it is one of the oldest Irani places
+                    in
+                    Pune.Cafe GoodLuck is most famous for it bun maska/bun omelette and Iranian tea among the other
+                    dishes.The place is always crowded and especially popular among the youngsters.Cafe GoodLuck has no
+                    other branch.</p>
+                  <p>Cafe GoodLuck is a popular Irani cafe-restaurant on the Fergusson College Road, in the Deccan
+                    Gymkhana
+                    area of Pune, India.Established in 1935 by Hussain Ali Yakshi, it is one of the oldest Irani places
+                    in
+                    Pune.Cafe GoodLuck is most famous for it bun maska/bun omelette and Iranian tea among the other
+                    dishes.The place is always crowded and especially popular among the youngsters.Cafe GoodLuck has no
+                    other branch.</p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 pad-0">
+                  <div class="caterate">
+                    <div class="titleStar">
+                      <div class="ourRate">Our Reviews</div>
+                      <i class="fa fa-star starone" aria-hidden="true"></i>
+                      <div class="total">{{reviewRating.total}}</div>
+                    </div>
+                    <div class="ratehandle" *ngFor="let dishrev of reviewRating.votes">
+                      <div class="stars">
+                        <i *ngIf="dishrev.rating && dishrev.rating >= 1 " class="fa fa-star starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating >= 2 " class="fa fa-star starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating >= 3 " class="fa fa-star starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating >= 4 " class="fa fa-star starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating == 5 " class="fa fa-star starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating < 1" class="fa fa-star-o starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating < 2" class="fa fa-star-o starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating < 3" class="fa fa-star-o starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating < 4" class="fa fa-star-o starcss"
+                          aria-hidden="true"></i>
+                        <i *ngIf="dishrev.rating && dishrev.rating < 5" class="fa fa-star-o starcss"
+                          aria-hidden="true"></i>
+                      </div>
+                      <div class="policy-vote">
+                        <div class="votecss">
+                          {{dishrev.votes}}
+                        </div> <span>Votes</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature_rating">
+                    <div class="feature">
+                      Features Reviews
+                    </div>
+                    <div class="place">
+                      <div class="imgdiv"><img src="assets/img/cafe.svg"></div>
+                      <div class="type">Place</div>
+                      <div class="heart">
+                        <ng-template #t let-fill="fill">
+                          <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                          </span>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="featureRating.place" [starTemplate]="t" [readonly]="true" [max]="5">
+                        </ngb-rating>
+                      </div>
+                    </div>
+                    <div class="place">
+                      <div class="imgdiv"><img src="assets/img/bread.svg"></div>
+                      <div class="type">Food</div>
+                      <div class="heart">
+                        <ng-template #t let-fill="fill">
+                          <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                          </span>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="featureRating.place" [starTemplate]="t" [readonly]="true" [max]="5">
+                        </ngb-rating>
+                      </div>
+                    </div>
+                    <div class="place">
+                      <div class="imgdiv"><img src="../../../assets/img/hotel.svg"></div>
+                      <div class="type">Service</div>
+                      <div class="heart">
+                        <ng-template #t let-fill="fill">
+                          <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                          </span>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="featureRating.service" [starTemplate]="t" [readonly]="true" [max]="5">
+                        </ngb-rating>
+                      </div>
+                    </div>
+                    <div class="place">
+                      <div class="imgdiv"><img src="assets/img/staff.svg"></div>
+                      <div class="type">Staff</div>
+                      <div class="heart">
+                        <ng-template #t let-fill="fill">
+                          <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                          </span>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="featureRating.staff" [starTemplate]="t" [readonly]="true" [max]="5">
+                        </ngb-rating>
+                      </div>
+                    </div>
+                    <div class="place">
+                      <div class="imgdiv"><img src="assets/img/breakfast.svg"></div>
+                      <div class="type">Breakfast</div>
+                      <div class="heart">
+                        <ng-template #t let-fill="fill">
+                          <span class="star" [class.full]="fill === 100">
+                            <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                          </span>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="featureRating.breakfast" [starTemplate]="t" [readonly]="true" [max]="5">
+                        </ngb-rating>
+                      </div>
+                    </div>
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
